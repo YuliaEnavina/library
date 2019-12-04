@@ -20,7 +20,8 @@ public class JdbcBookRepository implements BookRepository {
 
     @Override
     public List<Book> findAll() {
-        return jdbc.query("select id, author, title, genre, available, deleted from book",
+        return jdbc.query("select id, author, title, genre, available, deleted from book where " +
+                "available = true and deleted = false",
             this::mapRowToBook);
     }
 
