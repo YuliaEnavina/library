@@ -4,6 +4,6 @@ create table book (
  author varchar(50) not null,
  title varchar(50) not null,
  genre varchar(20) not null,
- available boolean not null,
- deleted boolean not null
+ available boolean default true not null,
+ deleted boolean default false not null
 );
